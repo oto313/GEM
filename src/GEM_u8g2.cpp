@@ -877,7 +877,7 @@ GEM_u8g2& GEM_u8g2::registerKeyPress(byte keyCode) {
 void GEM_u8g2::dispatchKeyPress() {
 
   if (context.loop != nullptr) {
-    if ((context.allowExit) && (_currentKey == GEM_KEY_CANCEL)) {
+    if ((context.allowExit) && (_currentKey == GEM_KEY_CANCEL || _currentKey == GEM_KEY_OK)) {
       if (context.exit != nullptr) {
         context.exit();
       } else {
